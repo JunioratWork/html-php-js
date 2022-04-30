@@ -43,7 +43,7 @@ formulario.addEventListener('submit',function(e){
     {
         // Create the order, based on your cart
         var order = {
-            "amount":   precio,
+            "amount":   precio*100,
             "currency": "PEN",
             "orderId":  "myOrderId-999999",
             "customer": {
@@ -66,7 +66,7 @@ formulario.addEventListener('submit',function(e){
 
         // Open a new connection, using the POST request on the URL endpoint
         //('https://cors-demo.glitch.me/allow-cors', {mode:'cors'})
-        request.open('POST', 'https://server-node-izipay.herokuapp.com/payment/init', true);
+        request.open('POST', 'http://localhost:5000/payment/init', true);
         request.setRequestHeader('Content-Type', 'application/json');
 
         request.onload = function () {
@@ -102,6 +102,23 @@ formulario.addEventListener('submit',function(e){
 
         // Add listener for submit event
         KR.onSubmit(onPaid);
+    }
+
+    /**
+    * Called when payment is finished
+    * @param event
+    */
+    function onPaid(event) {
+        if (event.clientAnswer.orderStatus === "PAID") {
+        // Remove the payment form
+        KR.removeForms();
+    
+        // Show success message
+        document.getElementById("paymentSuccessful").style.display = "block";
+        } else {
+        // Show error message to the user
+        alert("Payment failed !");
+        }
     }
     
 })
