@@ -18,18 +18,10 @@
 
 </head>
 <body>
-    <h2>Formulario de Pago</h2>
-    <div>
-        <form id="formulario">
-            <input type="text" name="Monto" placeholder="Ingresa Monto">
-            <input type="text" name="Moneda" placeholder="PEN">
-            <button type="submit">Finalizar con el Pago</button>
-        </form>
-        <div id="respuesta"></div>
-        
-        <h2>Izipay Acepta todas las tarjetas..!!!</h2>        
+    <h2>Pagina de pago</h2>
+    <div>                
         <!--Hidden payment form -->
-        <div id="paymentForm" class="kr-embedded" style="display:none">
+        <div id="paymentForm" kr-popin class="kr-embedded" style="display:none">
 
             <!-- payment form fields -->
             <div class="kr-pan"></div>
@@ -41,11 +33,14 @@
     
             <!-- error zone -->
             <div class="kr-form-error"></div>
-        </div>
-    </div>    
+        </div>   
+</body>
 
-</body>   
-<script src="app.js"></script>
+
+
+    </div>
+
+    <script src="app.js"></script>
 
 </body>
 </html>

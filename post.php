@@ -1,6 +1,5 @@
 <?php
-
-$Monto = $_POST['Monto']*100;
+$Monto = $_POST['Monto'];
 $Moneda = $_POST['Moneda'];
 
 if($Monto === '' || $Moneda === ''){
