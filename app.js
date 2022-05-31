@@ -79,7 +79,7 @@ formulario.addEventListener('submit',function(e){
  
          // Open a new connection, using the POST request on the URL endpoint
          //('https://cors-demo.glitch.me/allow-cors', {mode:'cors'})
-         request.open('POST', 'http://localhost:5000/CreatePayment', true);
+         request.open('POST', 'https://server-node-izipay.herokuapp.com/CreatePayment', true);
          request.setRequestHeader('Content-Type', 'application/json');
  
          request.onload = function () {
